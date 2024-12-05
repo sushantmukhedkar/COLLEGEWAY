@@ -105,7 +105,7 @@ def send_notification_email(sender_email, sender_password, recipient_email, name
 
     # Email content
     subject = 'Website Visit Notification'
-    body = f"Hello Mr.Harshkumar Devmurari,\n\nThis mail is a notification to you that your website has a new visitor.\n\nClient Details:\nVisitor Name: {name}\Visitor Email: {email}\nVisit Time: {visit_time}\n\nThis mail is one of the functionalities you have implemented in your project commiting to maintain active online presence\n\nBest regards,\nDronacharya(College Reccomandation System)"
+    body = f"Hello Mr.Sushant Mukhedkar,\n\nThis mail is a notification to you that your website has a new visitor.\n\nClient Details:\nVisitor Name: {name}\Visitor Email: {email}\nVisit Time: {visit_time}\n\nThis mail is one of the functionalities you have implemented in your project commiting to maintain active online presence\n\nBest regards,\nDronacharya(College Reccomandation System)"
 
     # Create a multipart message and set headers
     message = MIMEMultipart()

@@ -108,14 +108,18 @@ def register():
 
         # Storing in database
         db.execute("INSERT INTO users (name, email, password) VALUES (?, ?, ?)", [name, email, hash])
+        conn.commit()
         # print("tables interior: ")
         db.execute("SELECT * FROM users")
         # print(f"fetch of register", db.fetchall())
 
+        
+        
+        
         # Set the sender and recipient email addresses
         sender_email = 'dronacharya.counsellor@gmail.com'
         sender_password = 'ncmltbtaqqkhtmsv'
-        recipient_email = 'harshdevmurari007@gmail.com'
+        recipient_email = ''
         visit_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
         # Send me email

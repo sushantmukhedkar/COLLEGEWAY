@@ -5,77 +5,6 @@ Details
 {% endblock %}
 
 {% block main %}
-<!--
-    <div>
-        <div>
-            <div>
-                <h5>Enter your CET score</h5>
-                <input type="text" name="cet" placeholder="Your CET Score" autofocus autocomplete="off">
-            </div>
-            <div>
-                <h5>Enter your JEE score</h5>
-                <input type="text" name="jee" placeholder="Your JEE Score" autocomplete="off">
-            </div>
-            <div>
-                <h5>Your location</h5>
-                <label>
-                <input type="radio" name="location" value="enter" required>Enter some location other than your current location
-                </label>
-                <br>
-                <input type="text" name="entered_location" placeholder="Enter your location here">
-                <br>
-                <label>
-                <input type="radio" name="location" value="track">Give your current location
-                </label>
-            </div>
-            <div>
-                <h5>Choose engineering branches</h5>
-                <label>
-                <input type="checkbox" name="Computer Engineering" value="Computer Engineering">Computer Engineering
-                </label>
-                <label>
-                    <input type="checkbox" name="Information Technology" value="Information Technology">Information Technology
-                </label>
-                <label>
-                    <input type="checkbox" name="Computer Science and Engineering(Data Science)" value="Computer Science and Engineering(Data Science)">Computer Science and Engineering(Data Science)
-                </label>
-                <label>
-                    <input type="checkbox" name="Artificial Intelligence and Data Science" value="Artificial Intelligence and Data Science">Artificial Intelligence and Data Science
-                </label>
-                <label>
-                    <input type="checkbox" name="Mechanical Engineering" value="Mechanical Engineering">Mechanical Engineering
-                </label>
-                <label>
-                    <input type="checkbox" name="Electronics Engineering" value="Electronics Engineering">Electronics Engineering
-                </label>
-                <label>
-                    <input type="checkbox" name="Chemical Engineering" value="Chemical Engineering">Chemical Engineering
-                </label>
-                <label>
-                    <input type="checkbox" name="Electronics and Telecommunication\nEngg" value="Electronics and Telecommunication\nEngg">Electronics and Telecommunication Engg
-                </label>
-                <label>
-                    <input type="checkbox" name="Automobile Engineering" value="Automobile Engineering">Automobile Engineering
-                </label>
-            </div>
-            <br>
-            <div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-    </div>
--->
-
-
-
-
-
-
-
-
-
-
-
-
 <form action="/details" method="POST">
     <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh;flex-grow: 1;">
         <div class="loginbackground padding-top--64">
@@ -123,9 +52,27 @@ Details
                         <input type="text" name="cet" placeholder="Your CET Score" autofocus autocomplete="off">
                     </div>
                     <div class="field padding-bottom--24">
-                            <label for="jee">JEE Score</label>
-                            <input type="text" name="jee" placeholder="Your JEE Score" autocomplete="off">
+                        <label for="jee">JEE Score</label>
+                        <input type="text" name="jee" placeholder="Your JEE Score" autocomplete="off">
                     </div>
+
+                    <!-- New Category Dropdown Section -->
+                    <div class="field padding-bottom--24 category-section">
+                        <label for="category" class="category-label">Category</label>
+                        <select name="category" class="category-dropdown" required>
+                            <option value="" disabled selected>Select your category</option>
+                            <option value="OPEN">OPEN</option>
+                            <option value="OBC">OBC</option>
+                            <option value="EBC">EBC</option>
+                            <option value="NT1">NT1</option>
+                            <option value="NT2">NT2</option>
+                            <option value="NT3">NT3</option>
+                            <option value="VJNT">VJNT</option>
+                            <option value="SC">SC</option>
+                            <option value="ST">ST</option>
+                        </select>
+                    </div>
+
                     <label for="location">Location</label>
                     <label>
                         <input type="radio" name="location" value="enter" required>Enter some location other than your current location
@@ -183,7 +130,7 @@ Details
             </div>
             <div class="footer-link padding-top--24">
               <div class="listing padding-top--24 padding-bottom--24 flex-flex center-center">
-                <span><a href="http://127.0.0.1:5000/">©Heya</a></span>
+                <span><a href="http://127.0.0.1:5000/">©COLLEGEWAY</a></span>
                 <span><a href="#">Contact</a></span>
                 <span><a href="#">Privacy & terms</a></span>
               </div>
@@ -193,4 +140,32 @@ Details
       </div>
     </div>
 </form>
+
+<!-- Inline CSS for Category Styling -->
+<style>
+  .category-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .category-label {
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .category-dropdown {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 16px;
+  }
+  
+  .category-dropdown:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+</style>
 {% endblock %}
